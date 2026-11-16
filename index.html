@@ -1,0 +1,16 @@
+<!doctype html><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>PAN-VRF</title><body style="background:#04141f;
+color:#e8f6ff;font:18px sans-serif;text-align:center;
+padding-top:30vh"><h2 style="color:#22e1ff">PAN-VRF</h2>
+<p id=m>Abrindo...</p><script>
+var u=location.hostname.split('.')[0],
+r=location.pathname.split('/')[1];
+fetch('https://api.github.com/repos/'+u+'/'+r+
+'/contents/link.txt',{cache:'no-store',
+headers:{Accept:'application/vnd.github.raw'}})
+.then(function(x){return x.text()}).then(function(t){
+t=t.trim();if(/^https:[/][/]/.test(t))location.replace(t);
+else m.textContent='PAN desligado agora'})
+.catch(function(){m.textContent='Erro. Tente de novo.'});
+</script></body>
